@@ -25,8 +25,6 @@ void loop() {
     Serial.print("Received packet: ");
     Serial.println(received);
 
-    // إذا تحب تحلل البيانات كقيم منفصلة:
-    // مثال:
     float time_val, altitude, temp, pressure, gyroX, gyroY, gyroZ, accX, accY, accZ;
     int free_fall;
 
@@ -34,7 +32,6 @@ void loop() {
            &time_val, &altitude, &free_fall, &temp, &pressure,
            &gyroX, &gyroY, &gyroZ, &accX, &accY, &accZ);
 
-    // جرب تطبع بعض القيم كمثال:
     Serial.print("Time: "); Serial.println(time_val);
     Serial.print("Altitude: "); Serial.println(altitude);
     Serial.print("Temperature: "); Serial.println(temp);
