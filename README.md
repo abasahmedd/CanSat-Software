@@ -1,4 +1,4 @@
-# CanSat-Software
+# CanSat-Software-Format example  
 using LoRa Modulation and Frequency 433MHz and Antenna T-Type with gain 2dBi
 and Microchip Semtech Sx1278 
 ![image](https://github.com/user-attachments/assets/76794e77-2d9b-45ef-a976-063d26a2ab12)
