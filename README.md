@@ -14,3 +14,6 @@ and Microchip Semtech Sx1278
 
 # Serial Monitor
 ![image](https://github.com/user-attachments/assets/d0e097cd-dd8b-43d7-84ea-2145905c3a23)
+
+# Format 
+time_val + altitude + free_fall + temp + pressure + gyroX + gyroY + gyroZ + accX + accY + accZ ;
