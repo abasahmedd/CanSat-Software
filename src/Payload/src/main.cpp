@@ -6,14 +6,14 @@
 
 
 
-#define BUZZER_PIN 32  // البن المتصل بالبزر
+#define BUZZER_PIN 32  
 
 
 
 void setup() {
   Serial.begin(115200);
-  initSensors();  // تهيئة الحساسات
-  LoRa.setPins(18, 14, 26); // NSS, RST, DIO0 — حسب بورد TTGO Heltec LoRa V2
+  initSensors(); 
+  LoRa.setPins(18, 14, 26); 
 
   if (!LoRa.begin(915E6)) {
     Serial.println("LoRa init failed!");
@@ -21,18 +21,17 @@ void setup() {
   }
   Serial.println("LoRa init success");
   pinMode(BUZZER_PIN, OUTPUT);
-  digitalWrite(BUZZER_PIN, LOW);  // بالبداية مطفأ
+  digitalWrite(BUZZER_PIN, LOW); 
 
 
 
 }
 
 void loop() {
-  readSensors();  // يقرأ القيم من كل الحساسات
+  readSensors();  
 
   Serial.println("PRESSURE1, TEMP, ALTITUDE1, GPS LAT, GPS LNG, GPS ALT, PITCH, ROLL, YAW");
 
-  // بناء الباكيت
   String packet = "";
   packet += String(pressure1) + "|";
   packet += String(temp) + "|";
@@ -44,19 +43,16 @@ void loop() {
   packet += String(roll) + "|";
   packet += String(yaw);
 
-  // طباعة الباكيت للمراقبة
   Serial.println(packet);
 
-  // إرسال عبر LoRa
   LoRa.beginPacket();
   LoRa.print(packet);
   LoRa.endPacket();
 
-  // شرط الهبوط
-if (altitude1 < 10.0) {  // أو gpsAlt < 10.0 حسب الأفضل
-  digitalWrite(BUZZER_PIN, HIGH);  // شغّل البزر
+if (altitude1 < 10.0) {  
+  digitalWrite(BUZZER_PIN, HIGH);  
 } else {
-  digitalWrite(BUZZER_PIN, LOW);   // طفيه إذا بعده بالجو
+  digitalWrite(BUZZER_PIN, LOW);  
 }
 
 
