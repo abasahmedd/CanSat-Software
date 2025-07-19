@@ -6,14 +6,12 @@ and Microchip Semtech Sx1278
 
 
 
-# Tx
-![image](https://github.com/user-attachments/assets/c289aceb-3c65-4446-ac0e-9effc736d59c)
+# Payload
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/e9ca1251-4d29-4dbe-a57c-83b537dea977" />
 
-# Rx
-![image](https://github.com/user-attachments/assets/8239a6c3-7619-4935-9914-c30552dea4e5)
 
-# Serial Monitor
-![image](https://github.com/user-attachments/assets/d0e097cd-dd8b-43d7-84ea-2145905c3a23)
+# GUI
+<img width="1280" height="754" alt="image" src="https://github.com/user-attachments/assets/ed57341b-dc8d-4220-a071-04c7354e0bbf" />
 
 # Format 
 time_val + altitude + free_fall + temp + pressure + gyroX + gyroY + gyroZ + accX + accY + accZ ;
