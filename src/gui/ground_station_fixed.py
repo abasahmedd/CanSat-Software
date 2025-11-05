@@ -188,10 +188,10 @@ class GroundStationModern(QWidget):
         data = self.read_data_file()
         v = data["telemetry"]
 
-        # تحديث حالة الاتصال
+        
         self.widgets["status"].setPlainText(data["status"])
 
-        # تحديث التيليمتري النصي
+        
         telemetry_text = "\n".join([
             f"Pressure: {v.get('pressure1', '---')} Pa",
             f"Temperature: {v.get('temp', '---')} °C",
@@ -205,7 +205,7 @@ class GroundStationModern(QWidget):
         ])
         self.widgets["telemetry"].setPlainText(telemetry_text)
 
-        # تحديث الرسوم البيانية
+        
         try:
             alt = float(v.get("altitude1", "0"))
             temp = float(v.get("temp", "0"))
@@ -226,7 +226,7 @@ class GroundStationModern(QWidget):
             ax.set_title(label)
             self.graph_canvases[label].draw()
 
-        # تحديث الجدول
+        
         row_position = self.widgets["table"].rowCount()
         self.widgets["table"].insertRow(row_position)
 
@@ -235,7 +235,7 @@ class GroundStationModern(QWidget):
         self.widgets["table"].setItem(row_position, 2, QTableWidgetItem(v.get("altitude1", "---")))
         self.widgets["table"].setItem(row_position, 3, QTableWidgetItem(v.get("temp", "---")))
         self.widgets["table"].setItem(row_position, 4, QTableWidgetItem(v.get("gps_alt", "---")))
-        self.widgets["table"].setItem(row_position, 5, QTableWidgetItem("---"))  # Battery (فضها أو اربطها)
+        self.widgets["table"].setItem(row_position, 5, QTableWidgetItem("---"))   
         
 
 if __name__ == "__main__":
